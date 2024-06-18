@@ -48,6 +48,6 @@ app.get('/script.js', (req, res) => {
 });
 
 
-app.listen(port, () => {
+app.listen(3000, () => {
     console.log(`Server listening at http://localhost:3000`)
 })
