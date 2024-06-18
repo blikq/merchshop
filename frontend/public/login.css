@@ -1,0 +1,19 @@
+#form{
+    height: 100vh;
+    margin-bottom: 20px;
+}
+#img{
+    height: 100vh;
+}
+
+/*RESPONSIVE FOR MOBILE*/
+@media only screen and (max-width: 600px) {
+    #img{
+        height: 100vh;
+    }
+
+    #form{
+        height: 100vh;
+        margin-bottom: 100px;
+    }
+}
