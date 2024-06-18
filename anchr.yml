@@ -1,0 +1,18 @@
+version: 1
+applications:
+    -
+        frontend:
+            phases:
+                preBuild:
+                build:
+                    commands: ['npm i']
+
+                    commands: ['node index.js']
+            artifacts:
+                baseDirectory: dist
+                files:
+                    - '**/*'
+            cache:
+                paths:
+                    - '.npm/**/*'
+        appRoot: frontend
