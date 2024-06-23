@@ -49,5 +49,4 @@
 </template>
 
 <script>
-    import "/src/assets/sidebar.js";
 </script>
