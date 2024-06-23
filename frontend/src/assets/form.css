@@ -153,12 +153,7 @@ nav li{
         }
 
         .signUp .img{
-            background-image: none;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 0;
-            height: 0;
+            display: none;
 
 }
 }
