@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="login.css">
+<template>
 
-    <script src="index.js"></script>
-</head>
-<body>
+
     <header>
         <nav>
             <a href="/" class="logo">
-                <img src="SELMTECH.png">
+                <img src="/src/assets/SELMTECH.png">
             </a>
 
-            <div class="ul">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                </ul>
-            </div>
+            <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="">Home</a>
+                            <a href="">About</a>
+                            <a href="">Services</a>
+                </div>
+
+                <div class="side-btn" id="side-b">
+                    <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+                </div>
         </nav>
     </header>
 
@@ -31,16 +26,16 @@
 
         <form id="form">
             <h3>REGISTER NOW</h3>
-                USERNAME:
+                Username:
                 <input type="text" name="username" class="input" required>
 
-                EMAIL:
+                Email:
                 <input type="email" name="email" class="input" required>
 
-                USER PASSWORD:
+                Password:
                 <input type="password" name="psw" class="input email" required>
 
-                CONFIRM PASSWORD:
+                Cofirm Password:
                 <input type="password" name="psw" class="input remail" required>
 
                 <div>
@@ -49,5 +44,9 @@
                 </div>
         </form>
     </div>
-</body>
-</html>
+
+</template>
+
+<script>
+
+</script>
