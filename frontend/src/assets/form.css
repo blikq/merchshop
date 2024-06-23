@@ -151,7 +151,12 @@ nav li{
         width: 80%;
         padding: 0 10px;
         }
+
+    nav .logo img{
+        width: 60px;
+        height: 60px;
     }
+}
 
 
 
