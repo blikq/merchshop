@@ -3,6 +3,8 @@ import './assets/main.css'
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import App from './App.vue'
 
+
+
 // const index = createApp({
 //     data() {
 //       return {

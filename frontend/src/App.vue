@@ -1,8 +1,3 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import { ref } from 'vue'
-</script>
 
 <template>
     
@@ -11,4 +6,12 @@ import { ref } from 'vue'
 
 <style scoped>
 
+
 </style>
+
+<script setup>
+import { ref } from 'vue'
+
+
+
+</script>
