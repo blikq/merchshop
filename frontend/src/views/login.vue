@@ -1,23 +1,7 @@
 <template>
     <div id="login-app">
     <header>
-            <nav>
-                <a href="/" class="logo">
-                    <img src="/src/assets/SELMTECH.png">
-                </a>
-
-                <div id="mySidebar" class="sidebar">
-                    <a href="javascript:void(0)" class="closebtn"  ref="closebtn">&times;</a>
-                            <a href="">Home</a>
-                            <a href="">About</a>
-                            <a href="">Services</a>
-                </div>
-
-                <div class="side-btn" id="side-b">
-                    <button class="openbtn" ref="openbtn">&#9776;</button>
-
-                </div>
-            </nav>
+            <NavControl />
         </header>
 
         <div class="signUp">
@@ -38,37 +22,17 @@
             </form>
         </div>
         </div>
-
-
 </template>
 
 <script>
+import NavControl from '@/components/NavControl.vue';
+
 export default{
-    name: 'OpenNaV',
-    mounted() {
-    this.addClickListener();
-    },
-    methods: {
-    addClickListener() {
-    const elementopen = this.$refs.openbtn;
-    const elementclose = this.$refs.closebtn;
-
-    if (elementopen) {
-        elementopen.addEventListener('click', this.handleOpenClick);
-    };
-    if (elementclose){
-        elementclose.addEventListener('click', this.handleCloseClick);
-    };
-    },
-    handleOpenClick() {
-    this.$refs.sidebar.style.width = "250px";
-    this.$refs.sideb.style.marginLeft = "250px"
-    },
-    handleCloseClick() {
-    this.$refs.sidebar.style.width = "0px";
-    this.$refs.sideb.style.marginLeft = "0px"
+    name: "Login",
+    components: {
+        NavControl
     }
-    },
-
 }
+    
+
 </script>
