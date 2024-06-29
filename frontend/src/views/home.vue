@@ -1,3 +1,3 @@
 <template>
-    <h1> wassup </h1>
+    <h1> wassupu </h1>
 </template>
