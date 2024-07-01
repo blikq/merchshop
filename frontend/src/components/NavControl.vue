@@ -29,7 +29,8 @@ export default {
     mounted() {
     this.addClickListener();
     },
-    methods: {addClickListener() {
+    methods: {
+        addClickListener() {
         const elementopen = this.$refs.openbtn;
         const elementclose = this.$refs.closebtn;
 
@@ -39,8 +40,11 @@ export default {
         if (elementclose) {
             elementclose.addEventListener('click', this.handleCloseClick);
         }
+        
     },
     handleOpenClick() {
+        window.location.href = '';
+
         const sidebar = this.$refs.sidebar;
         const sideb = this.$refs.sideb;
 
