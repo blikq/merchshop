@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background-color: rgb(190, 189, 189);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn{
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: white;
+    color: black;
+}
+
+.btn:hover{
+    background-color: gray;
+}
+
+.header{
+    background-color: white;
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Logo */
+.logo{
+    display: inline-block;
+    color: black;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}
+
+.navbar{
+    width: 35%;
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+    padding: 0.5rem;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+    z-index: 1;
+}
+
+.nav-menu a{
+    display: block;
+    padding: 0.5rem;
+    color: black;
+    border-bottom: 1px solid rgb(245, 244, 244);
+}
+
+.nav-menu a:hover{
+    background-color: rgb(226, 223, 223);
+}
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 1.5rem 2rem;
+}/* Style label tag */
+
+.hamb-line {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 1.5rem;
+}
+
+/* Style span tag */
+.hamb-line::before,
+.hamb-line::after{
+    background: black;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before{
+    top: 0.4rem;
+}
+
+.hamb-line::after{
+    top: -0.4rem;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+body:has(.side-menu:checked) {
+  overflow: hidden;
+}
+
+.hero{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://th.bing.com/th/id/OIG2.Kwcqzby0Uy8ubDkFmkiF?w=270&h=270&c=6&r=0&o=5&dpr=1.1&pid=ImgGn);
+    background-position: 80% 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+
+    .container{
+        position: absolute;
+        top:40%;
+        margin: 1rem;
+        left: 5%;
+        text-align: center;
+        color: white;
+
+        h1{
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        p{
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        }
+    }
+}
+
+/*RESPONSIVE FOR LARGER SCREENS*/
+@media only screen and (min-width: 768px) {
+    .navbar{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .navbar a{
+        border: none;
+    }
+
+    .nav-menu li{
+        float: left;
+    }
+
+    .nav-menu a:hover{
+        background-color: rgb(226, 223, 223);
+    }
+
+    .hamb{
+        display: none;
+    }
+
+    .btn{
+        font-size: 1rem;
+        padding: 0.5rem;
+        margin:0;
+    }
+
+    .hero{
+        .container{
+            position: absolute;
+            left: 30%;
+        
+            h1{
+                font-size: 3rem;
+            }
+        
+            p{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

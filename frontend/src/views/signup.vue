@@ -1,5 +1,6 @@
 <template>
-
+    <link rel="stylesheet" href="/src/assets/form.css">
+    <link rel="stylesheet" href="/src/assets/login.css">
 
     <header>
         <NavControl />

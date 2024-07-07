@@ -1,10 +1,11 @@
 #form{
-    height: 100vh;
-    margin-bottom: 20px;
+    height: 100% !important;
+    margin-bottom: 0px;
 }
 #img{
     height: 100vh;
 }
+
 
 /*RESPONSIVE FOR MOBILE*/
 @media only screen and (max-width: 600px) {

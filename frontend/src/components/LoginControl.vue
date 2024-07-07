@@ -51,11 +51,8 @@ export default {
             }
         })
         .then((res) => {
-
-            // this.$store.commit("SET_AUTH", true);
-            // this.$store.commit("SET_TOKEN", res.data.token);
-        //   this.$store.commit("SET_USER", res.data.employee);
-          this.$router.push("/");
+            
+            this.$router.push("/");
         });
     },
 },

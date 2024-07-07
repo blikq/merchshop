@@ -1,6 +1,6 @@
 <template>
     <h1> wassupu </h1>
-
+    <p> hi {{ userData.username }} </p>
     
 </template>
 
@@ -23,22 +23,31 @@ function getCookie(name) {
     return cookieValue;
 }
 
-    export default {
-        beforeMount() {
-            this.Authenticate();
-        },
-        methods: {
-            Authenticate(){
+export default {
+        data() {
+        return {
+            userData: { username: "",},
+        };
+    },
+    beforeMount() {
+        this.Authenticate();
+    },
+    methods: {
+        Authenticate(){
+                const token = this.$cookies.get('token'); console.log(token);
+                const csrftoken = this.$cookies.get('csrf_token');
                 axios
             .get("/api/test", this.userData ,{
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken'),  // Include CSRF token if needed
+                    'X-CSRFToken': csrftoken,  // Include CSRF token if needed
                     'Access-Control-Allow-Origin': '*',
-                    'Authorization': 'token ' + getCookie('token')
+                    'Authorization': 'token ' + token
                 }
             })
             .then((res) => {
+                console.log(res.data)
+                this.userData.username = res.data.username
                 console.log("good");
             });
         }

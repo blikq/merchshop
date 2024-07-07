@@ -9,6 +9,7 @@ from django.contrib.auth import login as login_
 from rest_framework.authtoken.models import Token
 from .models import CustomUser
 import datetime
+from django.http import JsonResponse
 
 from .serializers import UserSerializer, UserSerializerLogin
 
@@ -19,6 +20,7 @@ def signup(request):
 
     if serializer.is_valid():
         serializer.save()
+        
         user = CustomUser.objects.get(username=request.data['username'], email=request.data['email'])
         user.set_password(request.data['password'])
         user.save()
@@ -27,7 +29,7 @@ def signup(request):
 
         return response
 
-    return Response(serializer.errors, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
 
 @api_view(['POST'])
 def login(request):
@@ -46,4 +48,7 @@ def login(request):
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def test_token(request):
-    return Response("passed!")
+    user = request.user
+    response = {"username": user.username}
+    print(response)
+    return JsonResponse(response)
