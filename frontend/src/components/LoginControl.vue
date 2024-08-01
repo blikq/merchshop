@@ -11,7 +11,9 @@
                         <button type="submit" @click.prevent="userLogin()" ref="submit" value="login">Login</button>
                         <p>Don't have an account? <a href="/signup">Sign Up</a></p>
                     </div>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 </form>
+
 </template>
 
 <script>

@@ -250,3 +250,33 @@ nav li{
   }
 
 
+
+@-webkit-keyframes rotating {
+    from{
+    -webkit-transform: rotate(0deg);
+    }
+    to{
+    -webkit-transform: rotate(360deg);
+    }
+}
+
+.getty{
+    font-size: 0.9rem;
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.getty:hover{
+    cursor: pointer;
+    background: black;
+    color: white;
+    border-radius: 33px;
+    padding: 4px 4px 4px 4px;
+    /* width: 4rem */
+}
+
+.getty:active{
+    cursor: pointer;
+    background: black;
+    color: white;
+}

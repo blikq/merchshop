@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
 
+import random
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(
@@ -17,9 +18,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
             'unique': "A user with that username already exists.",
         },
     )
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
 
     USERNAME_FIELD = "username"
@@ -30,3 +31,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+class VerifyEmail(models.Model):
+    # user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    email = models.EmailField(unique=True)
+    pin = models.IntegerField(default=random.randint(1000, 9999))
+    verified = models.BooleanField(default=False)
+    date_created = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return str(self.verified)
